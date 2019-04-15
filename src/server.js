@@ -1,7 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const PORT = 4500
+const cors = require('cors')
+const PORT = 3100
 const app = express()
+
+app.use(cors())
 
 const credentials = require('./credentials.json')
 

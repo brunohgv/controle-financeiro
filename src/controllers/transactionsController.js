@@ -16,8 +16,13 @@ class TransactionsController {
             value: req.body.value,
             date: req.body.date
         })
-
         return res.send(transaction)
+    }
+
+    async deleteById(req, res) {
+        const transactionId = req.params.id
+        const transaction = await Transaction.find({ _id: transactionId }).remove()
+        return res.json(transaction)
     }
 
 }
