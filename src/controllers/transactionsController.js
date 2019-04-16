@@ -6,7 +6,7 @@ class TransactionsController {
         const transaction = await Transaction.find({}, (err, result) => {
             if (err) return console.error(err)
             return result
-        })
+        }).sort({ createdAt: -1 })
         return res.json(transaction)
     }
 
